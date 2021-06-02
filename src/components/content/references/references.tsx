@@ -5,7 +5,7 @@ import SectionTitle from "../../shared/section_title"
 const References = () => {
   return (
     <Box height="100vh" background="inherit">
-      <SectionTitle  name=".references()" id="references" />
+      <SectionTitle  title=".references()" id="references" />
     </Box>
   )
 }

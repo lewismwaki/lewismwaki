@@ -9,7 +9,7 @@ const titleStyle = css`
 `
 
 interface TitleText {
-  name: string
+  title: string
   id?: string
 }
 
@@ -23,7 +23,7 @@ const SectionTitle = (props: TitleText) => {
         id={props.id}
         css={titleStyle}
       >
-        {props.name}
+        {props.title}
       </Text>
     </Center>
   )

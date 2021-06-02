@@ -5,7 +5,7 @@ import SectionTitle from "../../shared/section_title"
 const Expertise = () => {
   return (
     <Box height="100vh" background="inherit">
-      <SectionTitle  name=".expertise()" id="expertise"/>
+      <SectionTitle  title=".expertise()" id="expertise"/>
     </Box>
   )
 }
