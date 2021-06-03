@@ -6,7 +6,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const Projects = () => {
   return (
-    <Box height="100vh" background="inherit">
+    <Box height="500px" background="inherit">
       <SectionTitle title=".projects()" id="projects" />
       <SectionDescription description="Some of my proudest works. Enjoy. :)" />
 
@@ -16,7 +16,10 @@ const Projects = () => {
       <Center>
         <Box width="978px" height="240px" position="relative">
           {/* bkg */}
-          <StaticImage src="../../../images/group_67.png" alt="" />
+          <StaticImage
+            src="../../../images/projects_controller_bkg.png"
+            alt=""
+          />
 
           {/* content */}
           <Flex
