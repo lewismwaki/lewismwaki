@@ -10,7 +10,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-gatsby-cloud`,
+    // `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-typescript`,
     `@chakra-ui/gatsby-plugin`,

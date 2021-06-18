@@ -4,6 +4,7 @@ import SectionDescription from "../../shared/section_description"
 import SectionTitle from "../../shared/section_title"
 import { StaticImage } from "gatsby-plugin-image"
 
+
 const Projects = () => {
   return (
     <Box height="500px" background="inherit">
@@ -17,7 +18,7 @@ const Projects = () => {
         <Box width="978px" height="240px" position="relative">
           {/* bkg */}
           <StaticImage
-            src="../../../images/projects_controller_bkg.png"
+            src="../../../images/projects_controller_bkg.png"                                                                                                  
             alt=""
           />
 
