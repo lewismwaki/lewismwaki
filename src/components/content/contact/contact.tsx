@@ -23,7 +23,7 @@ const Contact = () => {
         {/* contact form */}
         <Box width="431.3px" height="499.3px" position="relative">
           {/* bkg */}
-          <StaticImage src="../../../images/contact_form_bkg.png" alt="" />
+          <StaticImage src="../../../images/contact_form.png" alt="" />
           <Flex direction="row" alignItems="flex-start" background="red">
             {/* form */}
             <Flex

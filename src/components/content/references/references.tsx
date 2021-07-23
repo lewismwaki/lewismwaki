@@ -1,31 +1,39 @@
 import { StaticImage } from "gatsby-plugin-image"
-import React from "react"
-// const logo = require("../../../images/arrow.svg") as string
-// import adfa from "../../../images/arrow.svg"
+import React, { useRef } from "react"
 import SectionTitle from "../../shared/section_title"
-import {
-  Avatar,
-  Flex,
-  Box,
-  Center,
-  Button,
-  Text,
-  Icon,
-  HStack,
-} from "@chakra-ui/react"
+import { Avatar, Flex, Box, Center, Text } from "@chakra-ui/react"
 import ArrowRight from "../../shared/arrow-right"
 import ArrowLeft from "../../shared/arrow-left"
+import Slider from "react-slick"
+
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import ReferenceDetails from "./reference_details"
+import { ReferenceItem } from "./reference_details"
+import ReferenceArrowLeft from "../../shared/reference_arrow_left"
+import ReferenceArrowRight from "../../shared/reference_arrow_right"
+
+const settings = {
+  dots: false,
+  infinite: true,
+  pauseOnHover: true,
+  autoplaySpeed: 6000,
+  autoplay: true,
+  arrows: false,
+}
 
 const References = () => {
+  const slider = useRef(null)
   return (
-    <Box height="800px" background="inherit">
+    <Box  background="inherit">
       <SectionTitle title=".references()" id="references" />
       <Box height="40px"></Box>
+
       {/* reference box */}
       <Center>
         <Box height="293.3px" width="544px" position="relative">
           {/* background img */}
-          <StaticImage src="../../../images/references_bkg.png" alt="" />
+          <StaticImage src="../../../images/references_img.png" alt="" />
 
           {/* content*/}
           <Box
@@ -35,60 +43,30 @@ const References = () => {
             right="30.7px"
             bottom="32px"
           >
-            <Flex direction="column">
-              {/* avi & name */}
-              <Flex direction="row" alignItems="center">
-                {/* avi */}
-                <Avatar
-                  name="Lewis Mwaki"
-                  src="https://bit.ly/kent-c-dodds"
-                  h="53.3px"
-                  w="53.3px"
+            <Slider ref={slider} {...settings}>
+              {ReferenceItems.map(ref => (
+                <ReferenceDetails
+                  refereeName={ref.refereeName}
+                  refereeAvi={ref.refereeAvi}
+                  refereeTitle={ref.refereeTitle}
+                  referenceText={ref.referenceText}
                 />
-                {/* /name */}
-                <Flex direction="column" alignItems="flex-start" pl="8px">
-                  <Text
-                    textColor="#442882"
-                    fontWeight="semibold"
-                    fontSize="12px"
-                  >
-                    Lewis Mwaki
-                  </Text>
-                  <Text textColor="#4D00FF" fontWeight="bold" fontSize="13px">
-                    Software Engineer at Spotify
-                  </Text>
-                </Flex>
-              </Flex>
-
-              <Text
-                fontWeight="semibold"
-                textColor="#707070"
-                pt="13.3px"
-                noOfLines={4}
-              >
-                What people are saying. What people are saying. What people are
-                saying. What people are saying. What people are saying. What
-                people are saying. What people are saying. What people are
-                saying. What people are saying. What people are saying. What
-                people are saying. saying. What people are saying. What people
-                are saying. What people are saying
-              </Text>
-
-              {/* <Flex direction="row" justifyContent="space-between">
-                <Box width="10px"></Box>
-                <Box width="46px" height="13.3px">
-                  <ArrowRight />
-                </Box>
-              </Flex> */}
-            </Flex>
+              ))}
+            </Slider>
           </Box>
 
           {/* buttons */}
           <Box position="absolute" right="32px" bottom="32px">
             <Flex direction="row">
-              <ArrowLeft cursor="pointer" />
+              <ReferenceArrowLeft
+                cursor="pointer"
+                onClick={() => slider?.current?.slickPrev()}
+              />
               <Box width="28px"></Box>
-              <ArrowRight cursor="pointer" />
+              <ReferenceArrowRight
+                cursor="pointer"
+                onClick={() => slider?.current?.slickNext()}
+              />
             </Flex>
           </Box>
         </Box>
@@ -96,5 +74,23 @@ const References = () => {
     </Box>
   )
 }
+
+const ReferenceItems: Array<ReferenceItem> = [
+  {
+    refereeName: "Andrew Zyu",
+    refereeAvi: "https://bit.ly/kent-c-dodds",
+    refereeTitle: "Software Engineer at Spotify",
+    referenceText:
+      "What people are saying. What people are saying. What people are saying. What people are saying. What people are saying.",
+  },
+
+  {
+    refereeName: "Lewis Mwaki",
+    refereeAvi: "https://bit.ly/kent-c-dodds",
+    refereeTitle: "Android Lead at Giglab.io",
+    referenceText:
+      "What people are saying. What people are saying. What people are saying. What people are saying. What people are saying. What people are saying. What people are saying. What people are saying. What people are saying. What people are saying. ",
+  },
+]
 
 export default References

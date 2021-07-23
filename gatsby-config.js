@@ -14,6 +14,8 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-typescript`,
     `@chakra-ui/gatsby-plugin`,
+    `gatsby-plugin-remove-serviceworker`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {

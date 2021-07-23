@@ -9,7 +9,7 @@ const About = () => {
       <SectionTitle title=".aboutMe()" id="about" />
       <Flex alignItems="flex-start" pl="96px" pt="40px">
         <Box width={384} height={468}>
-          <StaticImage src="../../../images/group_38.png" alt="" />
+          <StaticImage src="../../../images/about_img.png" alt="" />
         </Box>
       </Flex>
     </Box>
