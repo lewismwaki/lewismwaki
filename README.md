@@ -1,4 +1,7 @@
-<img src="https://gh-streak.mwakicodes.workers.dev" alt="GitHub Streak" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://gh-streak.mwakicodes.workers.dev?theme=dark">
+  <img src="https://gh-streak.mwakicodes.workers.dev?theme=light" alt="GitHub Streak" />
+</picture>
 <br/>
 
 ##### 🎶 Now Playing on Spotify :)
